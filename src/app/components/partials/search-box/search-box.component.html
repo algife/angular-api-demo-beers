@@ -1,0 +1,61 @@
+<!--
+  ==============
+  Searchbox
+  ==============
+ -->
+<h3>Search</h3>
+<form id="search-form" class="form-inline search-form mt-2 mb-2" [formGroup]="searchForm">
+  <!-- Search box -->
+  <div class="col searchbox">
+    <label for="search_query" class="invisible">
+      Search:
+    </label>
+    <input
+      type="text"
+      id="search_query"
+      class="search_query"
+      name="search_query"
+      formControlName="search_query"
+      required
+      placeholder="Search for a drink"
+    />
+    <span *ngIf="searchQueryFormControl.invalid && searchQueryFormControl.touched" class="form-invalid__search_query">
+      Please, introduce a valid search query
+    </span>
+  </div>
+
+  <!-- Search by -->
+  <div class="col search_by">
+    <div class="search_by-name-option">
+      <input
+        id="search_by-name-input"
+        class="search_by-name-input"
+        type="radio"
+        name="search_by"
+        formControlName="search_by"
+        value="name"
+      />
+      <label id="search_by-name-label" class="search_by-name-label" for="search_by-name-input">
+        by Name
+      </label>
+    </div>
+    <div class="search_by-brewed-option">
+      <input
+        id="search_by-brewed-input"
+        class="search_by-brewed-input"
+        type="radio"
+        name="search_by"
+        formControlName="search_by"
+        value="brewed_before"
+      />
+      <label id="search_by-brewed-label" class="search_by-brewed-label" for="search_by-brewed-input">
+        by Brewed Before Date
+      </label>
+    </div>
+  </div>
+  <div class="col">
+    <button type="button" [disabled]="searchForm.invalid" (click)="search($event)">
+      Search
+    </button>
+  </div>
+</form>

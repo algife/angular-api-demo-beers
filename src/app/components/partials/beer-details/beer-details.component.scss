@@ -1,0 +1,45 @@
+.beer-list-item {
+  display: flex;
+
+  &--image {
+    text-align: center;
+
+    .beer-image,
+    .beer-no-image {
+      max-width: 6rem;
+      max-height: 12rem;
+      width: auto;
+      height: auto;
+    }
+    .beer-no-image {
+    }
+  }
+
+  &--name {
+    font-size: 2rem;
+    color: dark;
+  }
+  &--abv {
+    font-size: 1.2rem;
+  }
+  &--brewed {
+    font-size: 1.2rem;
+  }
+  &--description {
+    font-size: 1rem;
+  }
+}
+
+.random-beer__actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  .btn {
+    width: 100%;
+    min-height: 5rem;
+    margin: 1em;
+  }
+}

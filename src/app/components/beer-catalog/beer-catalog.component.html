@@ -1,0 +1,57 @@
+<div class="col-10 mx-auto">
+  <!--
+  ==============
+  Random
+  ==============
+ -->
+  <div id="random-recommendation" class="random-recommendation" *ngIf="randomBeer">
+    <ul class="list-group  list-group-flush">
+      <!-- Random Beer Details: -->
+      <app-beer-details [beer]="randomBeer" [isRandomBeer]="true"></app-beer-details>
+    </ul>
+  </div>
+
+  <!--
+  ==============
+  Search Box
+  ==============
+  -->
+  <app-search-box #searchBox></app-search-box>
+
+  <!--
+  ==============
+  Search Results
+  ==============
+ -->
+  <div id="search-results" class="search-results">
+    <h3 id="search-results-title" class="search-results-title">
+      Search Results
+    </h3>
+    <ng-container
+      *ngIf="beerList && beerList?.length > 0; then beerListTemplate; else !beerList ? loading : noResultsTemplate"
+    ></ng-container>
+  </div>
+</div>
+
+<!--
+  ==============
+  TEMPLATES
+  ==============
+-->
+<ng-template #beerListTemplate>
+  <div id="beer-list" class="beer-list">
+    <ul class="list-group  list-group-flush">
+      <ng-container *ngFor="let beer of beerList; trackBy: trackByFn">
+        <app-beer-details [beer]="beer" [isRandomBeer]="false"></app-beer-details>
+      </ng-container>
+    </ul>
+  </div>
+</ng-template>
+
+<ng-template #noResultsTemplate>
+  <p>Your search does not return any results...</p>
+</ng-template>
+
+<ng-template #loading>
+  <div>Loading...</div>
+</ng-template>

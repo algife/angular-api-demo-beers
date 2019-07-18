@@ -1,0 +1,37 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "paths": {
+      "@config/*": ["src/app/shared/config/*"],
+      "@mocks/*": ["src/app/shared/mocks/*"],
+      "@directives/*": ["src/app/shared/directives/*"],
+      "@guards/*": ["src/app/shared/guards/*"],
+      "@helpers/*": ["src/app/shared/helpers/*"],
+      "@models/*": ["src/app/shared/models/*"],
+      "@pipes/*": ["src/app/shared/pipes/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@components/*": ["src/app/components/*"],
+      "@services/*": ["src/app/services/*"],
+      "@assets/*": ["src/assets/*"],
+      "@environments/*": ["src/environments/*"],
+      "@routes/*": ["src/app/routes/*"],
+      "@core/*": ["src/app/core/*"]
+    },
+    "baseUrl": "./",
+    "outDir": "./docs/",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"]
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}
